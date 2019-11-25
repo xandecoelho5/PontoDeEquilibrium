@@ -37,6 +37,7 @@
             this.dadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.resultadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.seletorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +48,7 @@
             this.simulaçõesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(480, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -64,19 +65,19 @@
             // empresasToolStripMenuItem
             // 
             this.empresasToolStripMenuItem.Name = "empresasToolStripMenuItem";
-            this.empresasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.empresasToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.empresasToolStripMenuItem.Text = "&Empresas...";
             this.empresasToolStripMenuItem.Click += new System.EventHandler(this.EmpresasToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(130, 6);
             // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.sairToolStripMenuItem.Text = "&Sair";
             // 
             // simulaçõesToolStripMenuItem
@@ -84,7 +85,8 @@
             this.simulaçõesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dadosToolStripMenuItem,
             this.toolStripMenuItem2,
-            this.resultadosToolStripMenuItem});
+            this.resultadosToolStripMenuItem,
+            this.seletorToolStripMenuItem});
             this.simulaçõesToolStripMenuItem.Name = "simulaçõesToolStripMenuItem";
             this.simulaçõesToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
             this.simulaçõesToolStripMenuItem.Text = "&Simulações";
@@ -108,11 +110,18 @@
             this.resultadosToolStripMenuItem.Text = "Resultados...";
             this.resultadosToolStripMenuItem.Click += new System.EventHandler(this.ResultadosToolStripMenuItem_Click);
             // 
+            // seletorToolStripMenuItem
+            // 
+            this.seletorToolStripMenuItem.Name = "seletorToolStripMenuItem";
+            this.seletorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.seletorToolStripMenuItem.Text = "Seletor";
+            this.seletorToolStripMenuItem.Click += new System.EventHandler(this.seletorToolStripMenuItem_Click);
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(480, 206);
             this.Controls.Add(this.menuStrip1);
             this.Name = "FormPrincipal";
             this.Text = "FormPrincipal";
@@ -134,6 +143,7 @@
         private System.Windows.Forms.ToolStripMenuItem dadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem resultadosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem seletorToolStripMenuItem;
     }
 }
 

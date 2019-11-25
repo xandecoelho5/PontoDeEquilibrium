@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CadEmpresas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadEmpresas.Designer.cs">
+      <DependentUpon>CadEmpresas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CadSimulacoes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CadSimulacoes.Designer.cs">
+      <DependentUpon>CadSimulacoes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEmpresas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,10 +82,42 @@
     <Compile Include="FormDados.Designer.cs">
       <DependentUpon>FormDados.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelector.Designer.cs">
+      <DependentUpon>FormSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PONTOEQDBDataSet.cs">
+      <DependentUpon>PONTOEQDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PONTOEQDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PONTOEQDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CadEmpresas.resx">
+      <DependentUpon>CadEmpresas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CadSimulacoes.resx">
+      <DependentUpon>CadSimulacoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDados.resx">
+      <DependentUpon>FormDados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEmpresas.resx">
+      <DependentUpon>FormEmpresas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormResultados.resx">
+      <DependentUpon>FormResultados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSelector.resx">
+      <DependentUpon>FormSelector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -83,7 +127,19 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="PONTOEQDBDataSet.xsc">
+      <DependentUpon>PONTOEQDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PONTOEQDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PONTOEQDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PONTOEQDBDataSet.xss">
+      <DependentUpon>PONTOEQDBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -96,6 +152,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot_41.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

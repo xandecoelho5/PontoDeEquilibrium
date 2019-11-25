@@ -34,7 +34,13 @@ namespace PontoDeEquilibrio
 
         private void ResultadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new FormResultados().Show();
+            //
+            //new FormResultados().Show();
+        }
+
+        private void seletorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new FormSelector().ShowDialog();
         }
     }
 }
