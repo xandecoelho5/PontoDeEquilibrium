@@ -23,21 +23,23 @@ namespace PontoDeEquilibrio
             SelectedValue = selectedValue;
             Razao = razao;
         }
-
-        private void FormResultados_Load(object sender, EventArgs e)
+        private void AtualizarGrid()
         {
-            this.empresasTableAdapter.Fill(this.pONTOEQDBDataSet.Empresas);    
+            this.empresasTableAdapter.Fill(this.pONTOEQDBDataSet.Empresas);
             simulacoesBindingSource.Filter = "EMPRESAID = " + SelectedValue;
             this.simulacoesTableAdapter.Fill(this.pONTOEQDBDataSet.Simulacoes);
 
-            if(this.simulacoesBindingSource.Count > 0)
+            if (this.simulacoesBindingSource.Count > 0)
             {
                 FillRows();
                 colorRows();
             }
             comboEmpresas.Text = Razao;
         }
-
+        private void FormResultados_Load(object sender, EventArgs e)
+        {
+            AtualizarGrid();   
+        }
         private void FillRows()
         {
             var fieldValues = (this.simulacoesBindingSource.Current as DataRowView).Row.ItemArray;
@@ -117,6 +119,35 @@ namespace PontoDeEquilibrio
                 FillRows();
                 colorRows();
             }      
+        }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        {
+            var indice = ((simulacoesBindingSource.Current as DataRowView).Row as PONTOEQDBDataSet.SimulacoesRow).SimulacaoID;
+            if(indice != 0)
+            {
+                if (MessageBox.Show("Deseja excluir esta empresa?", "Atenção",
+                                   MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                                   MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+                {
+                    var adp = new PONTOEQDBDataSetTableAdapters.SimulacoesTableAdapter();
+                    adp.DeleteQuery(indice);
+                    simulacoesBindingSource.Remove(simulacoesBindingSource.Current);
+                }
+            }
+            AtualizarGrid();
+            // atualizar campos conforme nova edição (alterando os campos em tela, o grid deve ser atualizado)
+        }
+
+        private void bindingNavigatorEditItem_Click(object sender, EventArgs e)
+        {
+            var index = int.Parse(bindingNavigator1.PositionItem.Text);
+            if(index != 0)
+            {
+                var form = new CadSimulacoes(SelectedValue, Razao);
+                form.ShowDialog();
+                AtualizarGrid();
+            }
         }
     }
 }

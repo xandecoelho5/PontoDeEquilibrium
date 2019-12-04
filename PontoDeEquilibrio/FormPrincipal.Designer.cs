@@ -36,7 +36,6 @@
             this.simulaçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
-            this.resultadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.seletorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -77,15 +76,15 @@
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.sairToolStripMenuItem.Text = "&Sair";
+            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
             // simulaçõesToolStripMenuItem
             // 
             this.simulaçõesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dadosToolStripMenuItem,
             this.toolStripMenuItem2,
-            this.resultadosToolStripMenuItem,
             this.seletorToolStripMenuItem});
             this.simulaçõesToolStripMenuItem.Name = "simulaçõesToolStripMenuItem";
             this.simulaçõesToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
@@ -103,18 +102,11 @@
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(177, 6);
             // 
-            // resultadosToolStripMenuItem
-            // 
-            this.resultadosToolStripMenuItem.Name = "resultadosToolStripMenuItem";
-            this.resultadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.resultadosToolStripMenuItem.Text = "Resultados...";
-            this.resultadosToolStripMenuItem.Click += new System.EventHandler(this.ResultadosToolStripMenuItem_Click);
-            // 
             // seletorToolStripMenuItem
             // 
             this.seletorToolStripMenuItem.Name = "seletorToolStripMenuItem";
             this.seletorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.seletorToolStripMenuItem.Text = "Seletor";
+            this.seletorToolStripMenuItem.Text = "Resultados...";
             this.seletorToolStripMenuItem.Click += new System.EventHandler(this.seletorToolStripMenuItem_Click);
             // 
             // FormPrincipal
@@ -142,7 +134,6 @@
         private System.Windows.Forms.ToolStripMenuItem simulaçõesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem dadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem resultadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem seletorToolStripMenuItem;
     }
 }

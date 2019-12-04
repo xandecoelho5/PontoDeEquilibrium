@@ -19,10 +19,17 @@ namespace PontoDeEquilibrio
             FormPai = formPai;
             this.empresasTableAdapter.Fill(this.pONTOEQDBDataSet.Empresas);
         }
+        public CadEmpresas(FormEmpresas formPai, int index)
+        {
+            InitializeComponent();
+            FormPai = formPai;
+            this.empresasTableAdapter.Fill(this.pONTOEQDBDataSet.Empresas);
+            empresasBindingSource.Position = index;
+        }
         internal void Novo()
         {
             empresasBindingSource.AddNew();
-            //razaoSocialTextBox.Focus();
+            razaoSocialTextBox.Focus();
             ShowDialog();
         }
         private void EmpresasBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -36,13 +43,7 @@ namespace PontoDeEquilibrio
         private void CadEmpresas_Load(object sender, EventArgs e)
         {
             // TODO: esta linha de código carrega dados na tabela 'pONTOEQDBDataSet.Empresas'. Você pode movê-la ou removê-la conforme necessário.
-          //  this.empresasTableAdapter.Fill(this.pONTOEQDBDataSet.Empresas);
-
-        }
-
-        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
-        {
-
+           //this.empresasTableAdapter.Fill(this.pONTOEQDBDataSet.Empresas);
         }
     }
 }

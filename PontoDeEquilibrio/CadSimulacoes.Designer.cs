@@ -219,8 +219,8 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de itens";
             // 
             // bindingNavigatorDeleteItem
@@ -325,6 +325,7 @@
             this.simulacaoIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.simulacoesBindingSource, "SimulacaoID", true));
             this.simulacaoIDTextBox.Location = new System.Drawing.Point(251, 64);
             this.simulacaoIDTextBox.Name = "simulacaoIDTextBox";
+            this.simulacaoIDTextBox.ReadOnly = true;
             this.simulacaoIDTextBox.Size = new System.Drawing.Size(121, 20);
             this.simulacaoIDTextBox.TabIndex = 4;
             // 

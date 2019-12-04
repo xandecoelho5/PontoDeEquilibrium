@@ -132,6 +132,21 @@
   <metadata name="CustoUnit.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="Qtde.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="CustoTotal.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="TotalVendas.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="GanhoPerda.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="CustoUnit.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="bindingNavigator1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -206,6 +221,25 @@
         bO+G80MFwKUTxgfgcO/b8D9IpXoFiiMDHIQm0skAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="bindingNavigatorEditItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAI5SURBVDhPrdLdS1NxHAbwQ9E/0WV02XWsK4kUShbVjb3Q
+        24hMoRdq1SoWhJS4ItRaiHSRkWUW0UUgTaMZantpmWtzbblzzuZmc2+6PG/OnfN7OudsDAVxNz3w4cfh
+        fJ8vnBfqv8Y+T872pJQhjX1OeWNLyBZNZ1JurYxsnK5EMW9PltCZKOHhbAltsbKeORnPE8ss4aMWwjOq
+        mMZYqVEUgE0QmGYbI4rtbBG36RVYV3malPE2rWAwxUNdAiIwkLlYvFKnKCLNbNdu2BgBdxkJbSpLZBnW
+        qIRr6vk4VoQjp+hL+mc5Xp1tJEJ8a6VeDuFCO6wRPnI1LOHKLwmXQhIuV06Tn8fBbwXdAW8Bpsm/Jyu1
+        tWnxC86WgIBawlkGCk936yVZYAOEoxtWFgPLtnAWZ6b4mvzzUYYIvw36AkjxbepL3Cxz0033Qhmc+M7V
+        NJmk6fIXoY0UEZkm7ULhpnvvBNI47F2qKZhmQJJByEtMnJJF9icRaBAuAqu64JC7ULX/62JV4/hC1Ug0
+        yqe7+0PKBfML/TG0KPzMqxv+NIwTi1X7xvJV9aM57FFdHPGC/dBVcLtc+Wz7g0d6WRZjU9rPcf1HGnvH
+        FtZV/yWP88MeiK9PA31HkB+4Zff5fFv0BURkj0FgO065M7EGdVCz25nDruFM1TmHB8J7EzBwFKmXrePo
+        bS6XV6fOmTOoxQ5N3afMk52OPxOGjxmXxjvat1B6d5yEB83BdcsbxTf0zOAZvM+SzzfNa8sU9Q+ztVZX
+        imlKuAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="pONTOEQDBDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>171, 17</value>
+  </metadata>
   <metadata name="simulacoesTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>528, 17</value>
   </metadata>

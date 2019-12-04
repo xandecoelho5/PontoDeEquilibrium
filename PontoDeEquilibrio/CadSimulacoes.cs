@@ -29,10 +29,19 @@ namespace PontoDeEquilibrio
             this.simulacoesTableAdapter.Fill(this.pONTOEQDBDataSet.Simulacoes);
             this.empresasTableAdapter.Fill(this.pONTOEQDBDataSet.Empresas);
         }
+
+        public CadSimulacoes(FormDados formSimulacoes, int index)
+        {
+            InitializeComponent();
+            FormSimulacoes = formSimulacoes;
+            this.simulacoesTableAdapter.Fill(this.pONTOEQDBDataSet.Simulacoes);
+            this.empresasTableAdapter.Fill(this.pONTOEQDBDataSet.Empresas);
+            simulacoesBindingSource.Position = index;
+        }
         internal void Novo()
         {
             simulacoesBindingSource.AddNew();
-            //simulacaoIDTextBox.Focus();
+            custoFixoTotalTextBox.Focus();
 
             ShowDialog();
         }

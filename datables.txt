@@ -1,0 +1,35 @@
+CREATE TABLE [dbo].[Empresas] (
+    [EmpresaID]     INT          IDENTITY (1, 1) NOT NULL,
+    [RazaoSocial] VARCHAR (50) NULL,
+	[CNPJ] VARCHAR (14) NULL,
+	[Fone] VARCHAR (14) NULL,
+    PRIMARY KEY CLUSTERED ([EmpresaID] ASC)
+);
+
+CREATE TABLE [dbo].[Simulacoes] (
+    [EmpresaID]         INT      NOT NULL,
+    [SimulacaoID]       INT      IDENTITY (1, 1) NOT NULL,
+    [CustoFixoTotal]    MONEY    NULL,
+    [CustoVarUnit]      MONEY    NULL,
+	[PrecoUnit]         MONEY    NULL,
+	[QtdeVendaInicial]  INT      NULL,
+	[QtdeVendaFinal]    INT      NULL,
+	[IncrementoUnit]    INT      NULL,
+    PRIMARY KEY CLUSTERED ([SimulacaoID] ASC),
+    CONSTRAINT [FKEmpresas] FOREIGN KEY ([EmpresaID]) REFERENCES [dbo].[Empresas] ([EmpresaID])
+);
+
+nulgth
+senha andryws01
+
+
+SELECT EmpresaID, SimulacaoID, CustoFixoTotal, CustoVarUnit, PrecoUnit, QtdeVendaInicial, QtdeVendaFinal, IncrementoUnit 
+FROM dbo.Simulacoes
+WHERE P.CATID = C.CATID
+ORDER BY P.Descricao
+
+SELECT S.*
+FROM dbo.Simulacoes S, dbo.Empresas E
+WHERE S.EMPRESAID = E.EMPRESAID
+, dbo.Empresas E
+WHERE S.EMPRESAID = E.EMPRESAID

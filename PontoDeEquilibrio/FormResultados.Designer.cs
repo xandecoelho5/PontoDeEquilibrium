@@ -29,12 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormResultados));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gridResultados = new System.Windows.Forms.DataGridView();
+            this.Qtde = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustoTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalVendas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GanhoPerda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustoUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TB_Custo_Equilibrio = new System.Windows.Forms.TextBox();
@@ -55,6 +60,7 @@
             this.simulacoesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pONTOEQDBDataSet = new PontoDeEquilibrio.PONTOEQDBDataSet();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -64,18 +70,13 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorEditItem = new System.Windows.Forms.ToolStripButton();
             this.simulacoesTableAdapter = new PontoDeEquilibrio.PONTOEQDBDataSetTableAdapters.SimulacoesTableAdapter();
             this.tableAdapterManager = new PontoDeEquilibrio.PONTOEQDBDataSetTableAdapters.TableAdapterManager();
             this.label8 = new System.Windows.Forms.Label();
             this.empresasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.empresasTableAdapter = new PontoDeEquilibrio.PONTOEQDBDataSetTableAdapters.EmpresasTableAdapter();
             this.comboEmpresas = new System.Windows.Forms.ComboBox();
-            this.Qtde = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustoTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TotalVendas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GanhoPerda = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustoUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridResultados)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -102,6 +103,53 @@
             this.gridResultados.ReadOnly = true;
             this.gridResultados.Size = new System.Drawing.Size(590, 328);
             this.gridResultados.TabIndex = 0;
+            // 
+            // Qtde
+            // 
+            this.Qtde.HeaderText = "Qtde";
+            this.Qtde.Name = "Qtde";
+            this.Qtde.ReadOnly = true;
+            this.Qtde.Width = 50;
+            // 
+            // CustoTotal
+            // 
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.CustoTotal.DefaultCellStyle = dataGridViewCellStyle5;
+            this.CustoTotal.HeaderText = "Custo Total";
+            this.CustoTotal.Name = "CustoTotal";
+            this.CustoTotal.ReadOnly = true;
+            this.CustoTotal.Width = 120;
+            // 
+            // TotalVendas
+            // 
+            dataGridViewCellStyle6.Format = "C2";
+            dataGridViewCellStyle6.NullValue = null;
+            this.TotalVendas.DefaultCellStyle = dataGridViewCellStyle6;
+            this.TotalVendas.HeaderText = "Total Vendas";
+            this.TotalVendas.Name = "TotalVendas";
+            this.TotalVendas.ReadOnly = true;
+            this.TotalVendas.Width = 120;
+            // 
+            // GanhoPerda
+            // 
+            dataGridViewCellStyle7.Format = "C2";
+            dataGridViewCellStyle7.NullValue = null;
+            this.GanhoPerda.DefaultCellStyle = dataGridViewCellStyle7;
+            this.GanhoPerda.HeaderText = "GanhoPerda";
+            this.GanhoPerda.Name = "GanhoPerda";
+            this.GanhoPerda.ReadOnly = true;
+            this.GanhoPerda.Width = 120;
+            // 
+            // CustoUnit
+            // 
+            dataGridViewCellStyle8.Format = "C2";
+            dataGridViewCellStyle8.NullValue = null;
+            this.CustoUnit.DefaultCellStyle = dataGridViewCellStyle8;
+            this.CustoUnit.HeaderText = "Custo Unit";
+            this.CustoUnit.Name = "CustoUnit";
+            this.CustoUnit.ReadOnly = true;
+            this.CustoUnit.Width = 120;
             // 
             // panel1
             // 
@@ -280,7 +328,8 @@
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem});
+            this.bindingNavigatorDeleteItem,
+            this.bindingNavigatorEditItem});
             this.bindingNavigator1.Location = new System.Drawing.Point(0, 0);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -305,9 +354,19 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -336,6 +395,7 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -380,14 +440,15 @@
             this.bindingNavigatorAddNewItem.Text = "Add new";
             this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
-            // bindingNavigatorDeleteItem
+            // bindingNavigatorEditItem
             // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
+            this.bindingNavigatorEditItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorEditItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorEditItem.Image")));
+            this.bindingNavigatorEditItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bindingNavigatorEditItem.Name = "bindingNavigatorEditItem";
+            this.bindingNavigatorEditItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorEditItem.Text = "Editar Arquivo";
+            this.bindingNavigatorEditItem.Click += new System.EventHandler(this.bindingNavigatorEditItem_Click);
             // 
             // simulacoesTableAdapter
             // 
@@ -430,53 +491,6 @@
             this.comboEmpresas.Size = new System.Drawing.Size(121, 21);
             this.comboEmpresas.TabIndex = 4;
             this.comboEmpresas.ValueMember = "EmpresaID";
-            // 
-            // Qtde
-            // 
-            this.Qtde.HeaderText = "Qtde";
-            this.Qtde.Name = "Qtde";
-            this.Qtde.ReadOnly = true;
-            this.Qtde.Width = 50;
-            // 
-            // CustoTotal
-            // 
-            dataGridViewCellStyle1.Format = "C2";
-            dataGridViewCellStyle1.NullValue = null;
-            this.CustoTotal.DefaultCellStyle = dataGridViewCellStyle1;
-            this.CustoTotal.HeaderText = "Custo Total";
-            this.CustoTotal.Name = "CustoTotal";
-            this.CustoTotal.ReadOnly = true;
-            this.CustoTotal.Width = 120;
-            // 
-            // TotalVendas
-            // 
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.TotalVendas.DefaultCellStyle = dataGridViewCellStyle2;
-            this.TotalVendas.HeaderText = "Total Vendas";
-            this.TotalVendas.Name = "TotalVendas";
-            this.TotalVendas.ReadOnly = true;
-            this.TotalVendas.Width = 120;
-            // 
-            // GanhoPerda
-            // 
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.GanhoPerda.DefaultCellStyle = dataGridViewCellStyle3;
-            this.GanhoPerda.HeaderText = "GanhoPerda";
-            this.GanhoPerda.Name = "GanhoPerda";
-            this.GanhoPerda.ReadOnly = true;
-            this.GanhoPerda.Width = 120;
-            // 
-            // CustoUnit
-            // 
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.CustoUnit.DefaultCellStyle = dataGridViewCellStyle4;
-            this.CustoUnit.HeaderText = "Custo Unit";
-            this.CustoUnit.Name = "CustoUnit";
-            this.CustoUnit.ReadOnly = true;
-            this.CustoUnit.Width = 120;
             // 
             // FormResultados
             // 
@@ -550,5 +564,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalVendas;
         private System.Windows.Forms.DataGridViewTextBoxColumn GanhoPerda;
         private System.Windows.Forms.DataGridViewTextBoxColumn CustoUnit;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorEditItem;
     }
 }

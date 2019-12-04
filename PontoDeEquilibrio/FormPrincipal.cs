@@ -32,15 +32,14 @@ namespace PontoDeEquilibrio
             new FormDados().Show();
         }
 
-        private void ResultadosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //
-            //new FormResultados().Show();
-        }
-
         private void seletorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new FormSelector().ShowDialog();
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

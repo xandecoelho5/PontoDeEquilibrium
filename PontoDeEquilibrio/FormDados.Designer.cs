@@ -35,11 +35,11 @@
             this.simulacoesTableAdapter = new PontoDeEquilibrio.PONTOEQDBDataSetTableAdapters.SimulacoesTableAdapter();
             this.tableAdapterManager = new PontoDeEquilibrio.PONTOEQDBDataSetTableAdapters.TableAdapterManager();
             this.simulacoesBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
@@ -47,6 +47,7 @@
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.simulacoesBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.simulacoesBindingNavigatorEditItem = new System.Windows.Forms.ToolStripButton();
             this.simulacoesDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -102,7 +103,8 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.simulacoesBindingNavigatorSaveItem});
+            this.simulacoesBindingNavigatorSaveItem,
+            this.simulacoesBindingNavigatorEditItem});
             this.simulacoesBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.simulacoesBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.simulacoesBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -113,6 +115,13 @@
             this.simulacoesBindingNavigator.Size = new System.Drawing.Size(851, 25);
             this.simulacoesBindingNavigator.TabIndex = 0;
             this.simulacoesBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Número total de itens";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -141,21 +150,15 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posição";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posição atual";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
-            this.bindingNavigatorCountItem.Text = "de {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Número total de itens";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -178,7 +181,7 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorAddNewItem
@@ -199,6 +202,7 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Excluir";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // simulacoesBindingNavigatorSaveItem
             // 
@@ -209,8 +213,20 @@
             this.simulacoesBindingNavigatorSaveItem.Text = "Salvar Dados";
             this.simulacoesBindingNavigatorSaveItem.Click += new System.EventHandler(this.SimulacoesBindingNavigatorSaveItem_Click);
             // 
+            // simulacoesBindingNavigatorEditItem
+            // 
+            this.simulacoesBindingNavigatorEditItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.simulacoesBindingNavigatorEditItem.Image = ((System.Drawing.Image)(resources.GetObject("simulacoesBindingNavigatorEditItem.Image")));
+            this.simulacoesBindingNavigatorEditItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.simulacoesBindingNavigatorEditItem.Name = "simulacoesBindingNavigatorEditItem";
+            this.simulacoesBindingNavigatorEditItem.Size = new System.Drawing.Size(23, 22);
+            this.simulacoesBindingNavigatorEditItem.Text = "Editar Arquivo";
+            this.simulacoesBindingNavigatorEditItem.Click += new System.EventHandler(this.simulacoesBindingNavigatorEditItem_Click);
+            // 
             // simulacoesDataGridView
             // 
+            this.simulacoesDataGridView.AllowUserToAddRows = false;
+            this.simulacoesDataGridView.AllowUserToDeleteRows = false;
             this.simulacoesDataGridView.AutoGenerateColumns = false;
             this.simulacoesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.simulacoesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -226,6 +242,7 @@
             this.simulacoesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.simulacoesDataGridView.Location = new System.Drawing.Point(0, 25);
             this.simulacoesDataGridView.Name = "simulacoesDataGridView";
+            this.simulacoesDataGridView.ReadOnly = true;
             this.simulacoesDataGridView.Size = new System.Drawing.Size(851, 411);
             this.simulacoesDataGridView.TabIndex = 1;
             // 
@@ -327,5 +344,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.ToolStripButton simulacoesBindingNavigatorEditItem;
     }
 }

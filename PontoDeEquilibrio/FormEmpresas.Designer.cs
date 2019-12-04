@@ -30,16 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEmpresas));
-            this.pONTOEQDBDataSet = new PontoDeEquilibrio.PONTOEQDBDataSet();
-            this.empresasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.empresasTableAdapter = new PontoDeEquilibrio.PONTOEQDBDataSetTableAdapters.EmpresasTableAdapter();
-            this.tableAdapterManager = new PontoDeEquilibrio.PONTOEQDBDataSetTableAdapters.TableAdapterManager();
             this.empresasBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.empresasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pONTOEQDBDataSet = new PontoDeEquilibrio.PONTOEQDBDataSet();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
@@ -47,38 +45,20 @@
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.empresasBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.empresasBindingNavigatorEditItem = new System.Windows.Forms.ToolStripButton();
             this.empresasDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.pONTOEQDBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empresasBindingSource)).BeginInit();
+            this.empresasTableAdapter = new PontoDeEquilibrio.PONTOEQDBDataSetTableAdapters.EmpresasTableAdapter();
+            this.tableAdapterManager = new PontoDeEquilibrio.PONTOEQDBDataSetTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.empresasBindingNavigator)).BeginInit();
             this.empresasBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.empresasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pONTOEQDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresasDataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pONTOEQDBDataSet
-            // 
-            this.pONTOEQDBDataSet.DataSetName = "PONTOEQDBDataSet";
-            this.pONTOEQDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // empresasBindingSource
-            // 
-            this.empresasBindingSource.DataMember = "Empresas";
-            this.empresasBindingSource.DataSource = this.pONTOEQDBDataSet;
-            // 
-            // empresasTableAdapter
-            // 
-            this.empresasTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.EmpresasTableAdapter = this.empresasTableAdapter;
-            this.tableAdapterManager.SimulacoesTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = PontoDeEquilibrio.PONTOEQDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // empresasBindingNavigator
             // 
@@ -98,7 +78,8 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.empresasBindingNavigatorSaveItem});
+            this.empresasBindingNavigatorSaveItem,
+            this.empresasBindingNavigatorEditItem});
             this.empresasBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.empresasBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.empresasBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -109,6 +90,23 @@
             this.empresasBindingNavigator.Size = new System.Drawing.Size(549, 25);
             this.empresasBindingNavigator.TabIndex = 0;
             this.empresasBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // empresasBindingSource
+            // 
+            this.empresasBindingSource.DataMember = "Empresas";
+            this.empresasBindingSource.DataSource = this.pONTOEQDBDataSet;
+            // 
+            // pONTOEQDBDataSet
+            // 
+            this.pONTOEQDBDataSet.DataSetName = "PONTOEQDBDataSet";
+            this.pONTOEQDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Número total de itens";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -142,16 +140,9 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posição atual";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
-            this.bindingNavigatorCountItem.Text = "de {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Número total de itens";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -174,7 +165,7 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorAddNewItem
@@ -195,6 +186,7 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Excluir";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // empresasBindingNavigatorSaveItem
             // 
@@ -203,10 +195,21 @@
             this.empresasBindingNavigatorSaveItem.Name = "empresasBindingNavigatorSaveItem";
             this.empresasBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.empresasBindingNavigatorSaveItem.Text = "Salvar Dados";
-            this.empresasBindingNavigatorSaveItem.Click += new System.EventHandler(this.EmpresasBindingNavigatorSaveItem_Click_1);
+            this.empresasBindingNavigatorSaveItem.Click += new System.EventHandler(this.empresasBindingNavigatorSaveItem_Click_1);
+            // 
+            // empresasBindingNavigatorEditItem
+            // 
+            this.empresasBindingNavigatorEditItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.empresasBindingNavigatorEditItem.Image = ((System.Drawing.Image)(resources.GetObject("empresasBindingNavigatorEditItem.Image")));
+            this.empresasBindingNavigatorEditItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.empresasBindingNavigatorEditItem.Name = "empresasBindingNavigatorEditItem";
+            this.empresasBindingNavigatorEditItem.Size = new System.Drawing.Size(23, 22);
+            this.empresasBindingNavigatorEditItem.Text = "Editar Arquivo";
+            this.empresasBindingNavigatorEditItem.Click += new System.EventHandler(this.empresasBindingNavigatorEditItem_Click);
             // 
             // empresasDataGridView
             // 
+            this.empresasDataGridView.AllowUserToDeleteRows = false;
             this.empresasDataGridView.AutoGenerateColumns = false;
             this.empresasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.empresasDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -233,18 +236,32 @@
             this.dataGridViewTextBoxColumn2.DataPropertyName = "RazaoSocial";
             this.dataGridViewTextBoxColumn2.HeaderText = "RazaoSocial";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "CNPJ";
             this.dataGridViewTextBoxColumn3.HeaderText = "CNPJ";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Fone";
             this.dataGridViewTextBoxColumn4.HeaderText = "Fone";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // empresasTableAdapter
+            // 
+            this.empresasTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.EmpresasTableAdapter = this.empresasTableAdapter;
+            this.tableAdapterManager.SimulacoesTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = PontoDeEquilibrio.PONTOEQDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // FormEmpresas
             // 
@@ -256,11 +273,11 @@
             this.Name = "FormEmpresas";
             this.Text = "FormEmpresas";
             this.Load += new System.EventHandler(this.FormEmpresas_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pONTOEQDBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.empresasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresasBindingNavigator)).EndInit();
             this.empresasBindingNavigator.ResumeLayout(false);
             this.empresasBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.empresasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pONTOEQDBDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.empresasDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -291,5 +308,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.ToolStripButton empresasBindingNavigatorEditItem;
     }
 }

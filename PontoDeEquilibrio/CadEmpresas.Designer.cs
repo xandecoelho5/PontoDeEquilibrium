@@ -160,13 +160,12 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Adicionar novo";
-            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de itens";
             // 
             // bindingNavigatorDeleteItem
@@ -253,6 +252,7 @@
             this.empresaIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.empresasBindingSource, "EmpresaID", true));
             this.empresaIDTextBox.Location = new System.Drawing.Point(91, 44);
             this.empresaIDTextBox.Name = "empresaIDTextBox";
+            this.empresaIDTextBox.ReadOnly = true;
             this.empresaIDTextBox.Size = new System.Drawing.Size(100, 20);
             this.empresaIDTextBox.TabIndex = 2;
             // 
