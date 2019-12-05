@@ -33,6 +33,7 @@ namespace PontoDeEquilibrio
             {
                 FillRows();
                 colorRows();
+                modifyCurrency();
             }
             comboEmpresas.Text = Razao;
         }
@@ -78,9 +79,18 @@ namespace PontoDeEquilibrio
 
             TB_Equilibrio.Text = (Double.Parse(TB_CustoTotal.Text) / (Double.Parse(TB_VendaPorUnidade.Text) - Double.Parse(TB_CustoVariavel.Text))).ToString();
             TB_Receita_Equilibrio.Text = (Double.Parse(TB_VendaPorUnidade.Text) * Double.Parse(TB_Equilibrio.Text)).ToString();
-            TB_Custo_Equilibrio.Text = (Double.Parse(TB_CustoTotal.Text) + (Double.Parse(TB_CustoVariavel.Text) * Double.Parse(TB_Equilibrio.Text))).ToString();
+            TB_Custo_Equilibrio.Text = (Double.Parse(TB_CustoTotal.Text) + (Double.Parse(TB_CustoVariavel.Text) * Double.Parse(TB_Equilibrio.Text))).ToString();           
         }
+        private void modifyCurrency()
+        {
+            TB_CustoTotal.Text = string.Format(System.Globalization.CultureInfo.GetCultureInfo("pt-BR"), "R${0:#,##0.00}", double.Parse(TB_CustoTotal.Text));
+            TB_CustoVariavel.Text = string.Format(System.Globalization.CultureInfo.GetCultureInfo("pt-BR"), "R${0:#,##0.00}", double.Parse(TB_CustoVariavel.Text));
+            TB_VendaPorUnidade.Text = string.Format(System.Globalization.CultureInfo.GetCultureInfo("pt-BR"), "R${0:#,##0.00}", double.Parse(TB_VendaPorUnidade.Text));
+            TB_Equilibrio.Text = string.Format(System.Globalization.CultureInfo.GetCultureInfo("pt-BR"), "R${0:#,##0.00}", double.Parse(TB_Equilibrio.Text));
+            TB_Receita_Equilibrio.Text = string.Format(System.Globalization.CultureInfo.GetCultureInfo("pt-BR"), "R${0:#,##0.00}", double.Parse(TB_Receita_Equilibrio.Text));
+            TB_Custo_Equilibrio.Text = string.Format(System.Globalization.CultureInfo.GetCultureInfo("pt-BR"), "R${0:#,##0.00}", double.Parse(TB_Custo_Equilibrio.Text));
 
+        }
         private void colorRows()
         {
             System.Windows.Forms.DataGridViewCellStyle cellStyle = new System.Windows.Forms.DataGridViewCellStyle();
@@ -103,7 +113,7 @@ namespace PontoDeEquilibrio
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
-            var form = new CadSimulacoes(SelectedValue, Razao);
+            var form = new CadSimulacoes(SelectedValue, Razao, this);
             form.Novo();
         }
 
@@ -118,6 +128,7 @@ namespace PontoDeEquilibrio
             {
                 FillRows();
                 colorRows();
+                modifyCurrency();
             }      
         }
 
@@ -144,10 +155,15 @@ namespace PontoDeEquilibrio
             var index = int.Parse(bindingNavigator1.PositionItem.Text);
             if(index != 0)
             {
-                var form = new CadSimulacoes(SelectedValue, Razao);
+                var form = new CadSimulacoes(SelectedValue, Razao, this);
                 form.ShowDialog();
                 AtualizarGrid();
             }
+        }
+
+        private void bindingNavigator1_RefreshItems(object sender, EventArgs e)
+        {
+
         }
     }
 }

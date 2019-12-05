@@ -314,6 +314,7 @@
             this.empresaIDComboBox.Size = new System.Drawing.Size(121, 21);
             this.empresaIDComboBox.TabIndex = 2;
             this.empresaIDComboBox.ValueMember = "EmpresaID";
+            this.empresaIDComboBox.SelectedIndexChanged += new System.EventHandler(this.empresaIDComboBox_SelectedIndexChanged);
             // 
             // empresasBindingSource
             // 

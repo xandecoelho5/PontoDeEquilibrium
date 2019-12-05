@@ -13,10 +13,13 @@ namespace PontoDeEquilibrio
     public partial class CadSimulacoes : Form
     {
         private FormDados FormSimulacoes;
+        private FormResultados FormResult;
         private string Razao;
-        public CadSimulacoes(int index, string razao)
+        private string Reason;
+        public CadSimulacoes(int index, string razao, FormResultados formResult)
         {
             InitializeComponent();
+            FormResult = formResult;
             this.empresasTableAdapter.Fill(this.pONTOEQDBDataSet.Empresas);
             simulacoesBindingSource.Filter = "EMPRESAID = " + index;
             this.simulacoesTableAdapter.Fill(this.pONTOEQDBDataSet.Simulacoes);
@@ -37,6 +40,11 @@ namespace PontoDeEquilibrio
             this.simulacoesTableAdapter.Fill(this.pONTOEQDBDataSet.Simulacoes);
             this.empresasTableAdapter.Fill(this.pONTOEQDBDataSet.Empresas);
             simulacoesBindingSource.Position = index;
+
+            var indice = ((simulacoesBindingSource.Current as DataRowView).Row as PONTOEQDBDataSet.SimulacoesRow).EmpresaID;
+            empresasBindingSource.Filter = "EMPRESAID = " + indice;
+            Reason = ((empresasBindingSource.Current as DataRowView).Row as PONTOEQDBDataSet.EmpresasRow).RazaoSocial;
+            empresasBindingSource.Filter = null;
         }
         internal void Novo()
         {
@@ -51,7 +59,8 @@ namespace PontoDeEquilibrio
             this.Validate();
             this.simulacoesBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.pONTOEQDBDataSet);
-            if(FormSimulacoes != null) FormSimulacoes.simulacoesTableAdapter.Fill(FormSimulacoes.pONTOEQDBDataSet.Simulacoes);
+            if (FormSimulacoes != null) FormSimulacoes.simulacoesTableAdapter.Fill(FormSimulacoes.pONTOEQDBDataSet.Simulacoes);
+            else if (FormResult != null) FormResult.simulacoesTableAdapter.Fill(FormResult.pONTOEQDBDataSet.Simulacoes);
         }
 
         private void CadSimulacoes_Load(object sender, EventArgs e)
@@ -60,7 +69,17 @@ namespace PontoDeEquilibrio
             {
                 empresaIDComboBox.SelectedIndex = empresaIDComboBox.FindString(Razao);
                 empresaIDComboBox.Enabled = false;
-            } else if (empresaIDComboBox.Items.Count > 0) empresaIDComboBox.SelectedIndex = 0;
+            } 
+            else if(Reason != null)
+            {
+                empresaIDComboBox.SelectedIndex = empresaIDComboBox.FindString(Reason);
+            }
+            else if (empresaIDComboBox.Items.Count > 0) empresaIDComboBox.SelectedIndex = 0;
+        }
+
+        private void empresaIDComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
