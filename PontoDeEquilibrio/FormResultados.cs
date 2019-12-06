@@ -35,6 +35,13 @@ namespace PontoDeEquilibrio
                 colorRows();
                 modifyCurrency();
             }
+            else
+            {
+                gridResultados.Rows.Clear();
+                foreach (var comp in pnlCusto.Controls) 
+                    if (comp is TextBox) 
+                        ((TextBox)comp).Text = "";
+            }
             comboEmpresas.Text = Razao;
         }
         private void FormResultados_Load(object sender, EventArgs e)

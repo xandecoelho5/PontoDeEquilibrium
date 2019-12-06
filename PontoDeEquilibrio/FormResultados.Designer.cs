@@ -40,7 +40,7 @@
             this.TotalVendas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GanhoPerda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CustoUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlCusto = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TB_Custo_Equilibrio = new System.Windows.Forms.TextBox();
             this.TB_Receita_Equilibrio = new System.Windows.Forms.TextBox();
@@ -78,7 +78,7 @@
             this.empresasTableAdapter = new PontoDeEquilibrio.PONTOEQDBDataSetTableAdapters.EmpresasTableAdapter();
             this.comboEmpresas = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridResultados)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.pnlCusto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
@@ -151,28 +151,28 @@
             this.CustoUnit.ReadOnly = true;
             this.CustoUnit.Width = 120;
             // 
-            // panel1
+            // pnlCusto
             // 
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.TB_Custo_Equilibrio);
-            this.panel1.Controls.Add(this.TB_Receita_Equilibrio);
-            this.panel1.Controls.Add(this.TB_Equilibrio);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.TB_VendaPorUnidade);
-            this.panel1.Controls.Add(this.TB_CustoVariavel);
-            this.panel1.Controls.Add(this.btnClose);
-            this.panel1.Controls.Add(this.TB_CustoTotal);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 349);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(591, 131);
-            this.panel1.TabIndex = 1;
+            this.pnlCusto.Controls.Add(this.pictureBox1);
+            this.pnlCusto.Controls.Add(this.TB_Custo_Equilibrio);
+            this.pnlCusto.Controls.Add(this.TB_Receita_Equilibrio);
+            this.pnlCusto.Controls.Add(this.TB_Equilibrio);
+            this.pnlCusto.Controls.Add(this.label5);
+            this.pnlCusto.Controls.Add(this.label6);
+            this.pnlCusto.Controls.Add(this.label7);
+            this.pnlCusto.Controls.Add(this.TB_VendaPorUnidade);
+            this.pnlCusto.Controls.Add(this.TB_CustoVariavel);
+            this.pnlCusto.Controls.Add(this.btnClose);
+            this.pnlCusto.Controls.Add(this.TB_CustoTotal);
+            this.pnlCusto.Controls.Add(this.label4);
+            this.pnlCusto.Controls.Add(this.label3);
+            this.pnlCusto.Controls.Add(this.label2);
+            this.pnlCusto.Controls.Add(this.label1);
+            this.pnlCusto.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlCusto.Location = new System.Drawing.Point(0, 349);
+            this.pnlCusto.Name = "pnlCusto";
+            this.pnlCusto.Size = new System.Drawing.Size(591, 131);
+            this.pnlCusto.TabIndex = 1;
             // 
             // pictureBox1
             // 
@@ -387,7 +387,6 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -502,14 +501,14 @@
             this.Controls.Add(this.comboEmpresas);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.bindingNavigator1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlCusto);
             this.Controls.Add(this.gridResultados);
             this.Name = "FormResultados";
             this.Text = "Tabela de Ponto de Equilíbrio";
             this.Load += new System.EventHandler(this.FormResultados_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridResultados)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlCusto.ResumeLayout(false);
+            this.pnlCusto.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
@@ -525,7 +524,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView gridResultados;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlCusto;
         private System.Windows.Forms.TextBox TB_VendaPorUnidade;
         private System.Windows.Forms.TextBox TB_CustoVariavel;
         private System.Windows.Forms.Button btnClose;
